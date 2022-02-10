@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "tgaji".
@@ -50,5 +51,10 @@ class Tgaji extends \yii\db\ActiveRecord
             'tunjangan_anak' => 'Tunjangan Anak',
             'tunjangan_makan' => 'Tunjangan Makan',
         ];
+    }
+
+    public function getPegawai()
+    {
+        return ArrayHelper::map(Tpegawai::find()->select(['id', 'nama', 'nip'])->asArray()->all(), 'id', 'nama', ['id' => 'nip']);
     }
 }

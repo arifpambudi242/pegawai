@@ -62,9 +62,4 @@ class Tpegawai extends \yii\db\ActiveRecord
             'golongan' => 'Golongan',
         ];
     }
-
-    public function getPegawai()
-    {
-        return TPegawai::find()->select(['id', 'nama', 'nip'])->asArray()->all();
-    }
 }

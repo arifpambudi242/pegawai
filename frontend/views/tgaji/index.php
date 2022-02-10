@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use app\models\Tgaji;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TgajiSearch */
@@ -20,7 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Tgaji', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -38,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Tgaji $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id, 'id_pegawai' => $model->id_pegawai]);
-                 }
+                }
             ],
         ],
     ]); ?>

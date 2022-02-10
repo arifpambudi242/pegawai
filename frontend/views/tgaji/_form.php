@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use frontend\models\Tpegawai;
+use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tgaji */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_pegawai')->textInput() ?>
+    <?= $form->field($model, 'id_pegawai')->dropDownList($model->getPegawai()) ?>
 
     <?= $form->field($model, 'gaji_pokok')->textInput() ?>
 
